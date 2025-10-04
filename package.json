@@ -15,5 +15,8 @@
     "url": "https://github.com/Kvvnn/vtuber_basic/issues"
   },
   "homepage": "https://github.com/Kvvnn/vtuber_basic#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }

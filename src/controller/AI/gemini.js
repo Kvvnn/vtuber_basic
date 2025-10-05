@@ -5,21 +5,25 @@ dotenv.config();
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
-async function main() {
+const question = "explain what is the AI in a few word"
+
+async function main(question) {
   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash",
-    contents: "Explain how AI works in a few words",
-    /*
+    contents: question,
     config: {
       thinkingConfig: {
         thinkingBudget: 0, // Disables thinking
       },
     }
-    */
   });
   console.log("Gemini saids: " + response.text);
+  
+  return response.text
 }
 
-await main();
+// await main();
 
-console.log("hello, world!")
+const answer = await main(question);
+
+export default answer;

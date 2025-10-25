@@ -1,10 +1,9 @@
-doctype html
-html(lang="ko")
-    head
-        title Vtuber
-    body
-        h1 Vtuber's house
-        input
-        button send
-        h3 #{AIResponse}
-    footer &copy; #{new Date().getFullYear()} kvvnn
+extends base.pug
+include mixins/videoList
+
+block content
+    h1 HI!
+    each video in videos
+        +videoList(video)
+        
+    button(onclick="location.href='/live2d'") Go to Canvas

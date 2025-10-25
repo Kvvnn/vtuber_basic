@@ -1,8 +1,13 @@
 extends base
 
 block content
-    canvas(id="live2d-canvas", width="800", height="600")
-        script(type="module").
-            import { Live2DCubismModel } from "https://cdn.jsdelivr.net/npm/live2d-renderer/dist/browser.js";
-            const canvas = document.getElementById('live2d-canvas');
-            const model = await Live2DCubismModel.create("https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/shizuku/shizuku.model.json", canvas);
+    canvas#live2d-canvas
+    script(type="module").
+        | import { LAppDelegate } from "Samples/TypeScript/Demo/dist/assets/index-DAhHvHok.js";
+        |
+        | window.addEventListener('load', () => {
+        |     if (LAppDelegate.getInstance().initialize() == false) {
+        |         return;
+        |     }
+        |     LAppDelegate.getInstance().run();
+        | });

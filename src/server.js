@@ -13,6 +13,7 @@ app.set("views", process.cwd()+"/src/views");
 const logger = morgan('dev');
 
 app.use(logger)
+app.use("/Samples", express.static("src/Samples"));
 app.use("/",globalRouter);
 app.use("/video",videoRouter);
 

@@ -1,3 +1,0 @@
-
-> vtuber_simple@1.0.0 dev
-> nodemon --exec babel-node src/server.js
